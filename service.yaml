@@ -1,28 +1,18 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2025-05-26T07:00:54Z"
   labels:
     app: my-deploym
   name: my-svc
-  namespace: default
-  resourceVersion: "27569"
-  uid: 82bdc6f6-9ec5-41cd-8f07-6bd84cd1f026
 spec:
-  clusterIP: 10.107.81.158
-  clusterIPs:
-  - 10.107.81.158
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
   - port: 80
     protocol: TCP
     targetPort: 8080
+    nodePort: 31000
   selector:
     app: my-deploym
-  sessionAffinity: None
+  
   type: NodePort
-status:
+
 
