@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: my-deploym
+  name: my-deploym
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-deploym
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-deploym
+    spec:
+      containers:
+      - image: sujeetsr07/my-img2
+        name: my-img2
+        resources: {}
+status: {}
